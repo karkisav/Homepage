@@ -1,0 +1,70 @@
+body {
+    background-color: lightblue;
+    overflow: hidden;
+}
+
+.Tap-a-random {
+    background: white;
+    font-size: 40px;
+    font-family: "Rubik Mono One", monospace;
+    text-align: center;
+    max-width: fit-content;
+    max-height: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    inset: 0px;
+    margin: auto;
+    z-index: 1000;
+}
+
+.random-image {
+    position: absolute;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+    max-width: 700px; /* Set maximum width */
+    max-height: 700px; /* Set maximum height */
+    z-index: 1;
+    width: auto;
+    height: auto;
+}
+
+.backButton__container {
+    position: fixed;
+    left: 60px;
+    top: 40px;
+    width: 81px;
+    height: 81px;
+    z-index: 1000;
+    -webkit-animation: rotateAnimation 3s infinite linear;
+            animation: rotateAnimation 3s infinite linear;
+    -webkit-transform-origin: center;
+            transform-origin: center;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-faster {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(720deg); /* Rotate faster */
+    }
+}
+
+.backButton__svg-svg {
+    transition: transform 0.3s ease; /* Smooth transition when not hovered */
+    animation: rotate 2s linear infinite; /* Continuous rotation animation */
+}
+
+.backButton__container:hover .backButton__svg-svg {
+    transition: transform 0.1s ease; /* Faster transition when hovered */
+    animation: rotate-faster 1s linear infinite; /* Faster continuous rotation animation */
+}
